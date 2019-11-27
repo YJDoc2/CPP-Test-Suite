@@ -14,6 +14,10 @@ class test_functional_suite{
         std::list<assertion_exception> exceptions;
 
     public:
+        test_functional_suite(){
+            before = [](){};
+            after = [](){};
+        }
         void set_before_function(void (*fn)(void));
         void set_after_function(void (*fn)(void));
         void add_test(void (*fn)(void));
